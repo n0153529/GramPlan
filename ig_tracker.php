@@ -1,8 +1,6 @@
 <?php the_content(); /* Template Name: IG Tracker */
 
-
 $userm = MeprUtils::get_currentuserinfo(); //print_r($userm);
-
 
 get_header();
 
@@ -21,9 +19,6 @@ get_header();
 	$sql = $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}ig_tracker_prd WHERE YEAR(created_date) = YEAR('".$date."')
   AND MONTH(created_date) = MONTH('".$date."') AND user = '".$username."' AND datetype = 'monthly'");
 	$monthly_array = $wpdb->get_results( $sql , ARRAY_A );  
-
-
-
 
 
 
@@ -231,15 +226,17 @@ jQuery(document).ready(function ($) {
  <!-- NEW TOP OF PAGE TITLE SAVE BUTTON -->	
 
 
+
+<!-- LEFT HAND SIDE -->
 <div id="maingramplan-left">
 	
 
 
-<!-- TO DO -->
+<!-- TO DO SECTION 1 -->
 <div class="gram-box">
 
-<div style="display: inline-block; padding: 2px 20px 2px 20px; background-color: #C3504C; border-radius: 10px 10px 10px 10px; margin-bottom: 10px;">
-	<h3 style="color:#fff; margin-bottom:-2px; font-family: 'Brasika Display'; font-weight: 400; text-transform: uppercase;font-size: 1.75em;">Weekly Tasks:</h3>	
+<div class="gramhdrtitle">
+	<h3>Weekly Tasks:</h3>	
 </div>	
 	
 <div class="todo">
@@ -259,12 +256,11 @@ jQuery(document).ready(function ($) {
 
 
 
-<!-- TO LEARN -->
+<!-- TO LEARN SECTION 2 -->
 <div class="gram-box">
 
-
-<div style="display: inline-block; padding: 2px 20px 2px 20px; background-color: #C3504C; border-radius: 10px 10px 10px 10px; margin-bottom: 10px;">
-	<h3 style="color:#fff; margin-bottom:-2px; font-family: 'Brasika Display'; font-weight: 400; text-transform: uppercase;font-size: 1.75em;">Monthly Teachings:</h3>	
+<div class="gramhdrtitle">
+	<h3>Monthly Teachings:</h3>	
 </div>
 
 <div class="tolearn">
@@ -280,12 +276,11 @@ jQuery(document).ready(function ($) {
 
 
 
-<!-- TO POST -->
+<!-- TO POST SECTION 3 -->
 <div class="gram-box">	
 
-
-<div style="display: inline-block; padding: 2px 20px 2px 20px; background-color: #C3504C; border-radius: 10px 10px 10px 10px; margin-bottom: 10px;">
-	<h3 style="color:#fff; margin-bottom:-2px; font-family: 'Brasika Display'; font-weight: 400; text-transform: uppercase;font-size: 1.75em;">This Weeks Content:</h3>	
+<div class="gramhdrtitle">
+	<h3>This Weeks Content:</h3>	
 </div>	
 	
 <table class="tablesorter topost">
@@ -440,11 +435,11 @@ jQuery(document).ready(function ($) {
 
 
 
-<!-- TO SHARE -->
+<!-- TO SHARE SECTION 4-->
 <div class="gram-box">	
 
-<div style="display: inline-block; padding: 2px 20px 2px 20px; background-color: #C3504C; border-radius: 10px 10px 10px 10px; margin-bottom: 10px;">
-	<h3 style="color:#fff; margin-bottom:-2px; font-family: 'Brasika Display'; font-weight: 400; text-transform: uppercase;font-size: 1.75em;">Stories To Share:</h3>	
+<div class="gramhdrtitle">
+	<h3>Stories To Share:</h3>	
 </div>
 	
 <table class="tablesorter toshare">
@@ -553,17 +548,16 @@ jQuery(document).ready(function ($) {
 
 
 
-
+<!-- RIGHT HAND SIDE -->
 <div id="maingramplan-right">
 	
 
 
-
-<!-- TO REPLY TO -->
+<!-- TO REPLY TO - R SECTION 1 -->
 <div class="gram-box">	
 
-<div style="display: inline-block; padding: 2px 20px 2px 20px; background-color: #C3504C; border-radius: 10px 10px 10px 10px; margin-bottom: 10px;">
-	<h3 style="color:#fff; margin-bottom:-2px; font-family: 'Brasika Display'; font-weight: 400; text-transform: uppercase;font-size: 1.75em;">To Reply To:</h3>	
+<div class="gramhdrtitle">
+	<h3>To Reply To:</h3>	
 </div>
 <a class="elementor-icon" href="https://www.instagram.com/direct/inbox/">
 <img src="https://socialteacup.co.uk/wp-content/uploads/2021/08/icon-mail2-60.png" alt="Reply" id="reply-icon" style="vertical-align: middle;line-height: 1.5em;margin-left: 10px;">
@@ -735,7 +729,6 @@ jQuery(document).ready(function ($) {
 	</table>
 </div>
 
-
 <script>
 function openTabs(tabName) {
   var i;
@@ -748,58 +741,53 @@ function openTabs(tabName) {
 </script>	
 	
 	
-	
-
-
-	
-	
-
-
 </div>		
 	
 
 
 
-<!-- To Analyse -->
+<!-- To Analyse - R SECTION 2 -->
 <div class="gram-box">	
 
-<div style="display: inline-block; padding: 2px 20px 2px 20px; background-color: #C3504C; border-radius: 10px 10px 10px 10px; margin-bottom: 10px;">
-	<h3 style="color:#fff; margin-bottom:-2px; font-family: 'Brasika Display'; font-weight: 400; text-transform: uppercase;font-size: 1.75em;">Weekly insights:</h3>	
+<div class="gramhdrtitle">
+	<h3>Weekly insights:</h3>	
 </div>
 	
-<div style="display: inline-flex;">
-<div class="toanalyse">
-<label style="font-size:1em;">Accounts reached:</label>
-<input class="ig_item<?php echo get_value('toanalyse','accounts_reached','none',$weekly_array,'class','text');?> type="text" datetype="weekly" section_n="toanalyse" typea="accounts_reached" typeb="none" <?php echo get_value('toanalyse','accounts_reached','none',$weekly_array,'value','text'); ?>/>
-</div>
+	<div style="display: inline-flex;">
+	<div class="toanalyse">
+	<label style="font-size:1em;">Accounts reached:</label>
+	<input class="ig_item<?php echo get_value('toanalyse','accounts_reached','none',$weekly_array,'class','text');?> type="text" datetype="weekly" section_n="toanalyse" typea="accounts_reached" typeb="none" <?php echo get_value('toanalyse','accounts_reached','none',$weekly_array,'value','text'); ?>/>
+	</div>
 
-<div class="toanalyse">
-<label style="font-size:1em;">Content interactions:</label>
-<input class="ig_item<?php echo get_value('toanalyse','content_interactions','none',$weekly_array,'class','text');?> type="text" datetype="weekly" section_n="toanalyse" typea="content_interactions" typeb="none" <?php echo get_value('toanalyse','content_interactions','none',$weekly_array,'value','text'); ?>/>
-</div>
-</div>
+	<div class="toanalyse">
+	<label style="font-size:1em;">Content interactions:</label>
+	<input class="ig_item<?php echo get_value('toanalyse','content_interactions','none',$weekly_array,'class','text');?> type="text" datetype="weekly" section_n="toanalyse" typea="content_interactions" typeb="none" <?php echo get_value('toanalyse','content_interactions','none',$weekly_array,'value','text'); ?>/>
+	</div>
+	</div>
 
 
-<div style="display: inline-flex;">	
-<div class="toanalyse">
-<label style="font-size:1em;">Profile visits:</label>
-<input class="ig_item<?php echo get_value('toanalyse','profile_visits','none',$weekly_array,'class','text');?> type="text" datetype="weekly" section_n="toanalyse" typea="profile_visits" typeb="none" <?php echo get_value('toanalyse','profile_visits','none',$weekly_array,'value','text'); ?>/>
-</div>
+	<div style="display: inline-flex;">	
+	<div class="toanalyse">
+	<label style="font-size:1em;">Profile visits:</label>
+	<input class="ig_item<?php echo get_value('toanalyse','profile_visits','none',$weekly_array,'class','text');?> type="text" datetype="weekly" section_n="toanalyse" typea="profile_visits" typeb="none" <?php echo get_value('toanalyse','profile_visits','none',$weekly_array,'value','text'); ?>/>
+	</div>
 
-<div class="toanalyse">
-<label style="font-size:1em;">Website taps:</label>
-<input class="ig_item<?php echo get_value('toanalyse','website_taps','none',$weekly_array,'class','text');?> type="text" datetype="weekly" section_n="toanalyse" typea="website_taps" typeb="none" <?php echo get_value('toanalyse','website_taps','none',$weekly_array,'value','text'); ?>/>
-</div>
-</div>
+	<div class="toanalyse">
+	<label style="font-size:1em;">Website taps:</label>
+	<input class="ig_item<?php echo get_value('toanalyse','website_taps','none',$weekly_array,'class','text');?> type="text" datetype="weekly" section_n="toanalyse" typea="website_taps" typeb="none" <?php echo get_value('toanalyse','website_taps','none',$weekly_array,'value','text'); ?>/>
+	</div>
+	</div>
 
 </div>	
+
+
 	
 	
-<!-- To Unwind -->
+<!-- To Unwind - R SECTION 3 -->
 <div class="gram-box">	
 
-<div style="display: inline-block; padding: 2px 20px 2px 20px; background-color: #C3504C; border-radius: 10px 10px 10px 10px; margin-bottom: 10px;">
-	<h3 style="color:#fff; margin-bottom:-2px; font-family: 'Brasika Display'; font-weight: 400; text-transform: uppercase;font-size: 1.75em;">The Recharge:</h3>	
+<div class="gramhdrtitle">
+	<h3>The Recharge:</h3>	
 </div>	
 	
 	<div class="self-love-time-sunday">
@@ -811,11 +799,11 @@ function openTabs(tabName) {
 
 
 
-<!-- To Remember -->
+<!-- To Remember - R SECTION 4 -->
 <div class="gram-box">	
 
-<div style="display: inline-block; padding: 2px 20px 2px 20px; background-color: #C3504C; border-radius: 10px 10px 10px 10px; margin-bottom: 10px;">
-	<h3 style="color:#fff; margin-bottom:-2px; font-family: 'Brasika Display'; font-weight: 400; text-transform: uppercase;font-size: 1.75em;">Journal Entries:</h3>	
+<div class="gramhdrtitle">
+	<h3>Journal Entries:</h3>	
 </div>	
 
 
@@ -824,22 +812,12 @@ function openTabs(tabName) {
 	</div>
 	
 	
-	
 </div>	
-	
-
-
-	
-	
 	
 	
 </div>	
 
 
-
-	
-	
-	
 
 <?php
 
