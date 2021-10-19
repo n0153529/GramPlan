@@ -20,8 +20,6 @@ get_header();
   AND MONTH(created_date) = MONTH('".$date."') AND user = '".$username."' AND datetype = 'monthly'");
 	$monthly_array = $wpdb->get_results( $sql , ARRAY_A );  
 
-
-
 // if a checkbox and not exist, output  class as 'new'  and  'data' as ""
 // if a checkbox and exists, output  class as ""  and  'data' as checked="checked"
 // if a text field and not exist, output class as 'new' and data as 'value=""'
@@ -213,7 +211,7 @@ jQuery(document).ready(function ($) {
 </div>
 
 <div class="elementor-button-wrapper" style="display: inline-block; float:right;">
-<a href="/wp-content/uploads/2021/08/TST-The-Gram-Plan-Guide.pdf" target="_blank" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow ari-fancybox-pdf ari-fancybox" style="font-size: 1rem; font-weight: 600; text-transform: uppercase; line-height: 1.6em; letter-spacing: 0.5px; fill: #000000; color: #000000; background-color: #D0D6F6; border-radius: 50px 50px 50px 50px; padding: 10px 40px 10px 40px;cursor:pointer;margin: 0px 10px;" role="button">
+<a href="/wp-content/uploads/2021/10/The-Gram-Plan-Oct2021.pdf" target="_blank" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow ari-fancybox-pdf ari-fancybox" style="font-size: 1rem; font-weight: 600; text-transform: uppercase; line-height: 1.6em; letter-spacing: 0.5px; fill: #000000; color: #000000; background-color: #D0D6F6; border-radius: 50px 50px 50px 50px; padding: 10px 40px 10px 40px;cursor:pointer;margin: 0px 10px;" role="button">
 <span class="elementor-button-text">'Gram Guide </span>
 </a>
 </div>
@@ -561,7 +559,6 @@ jQuery(document).ready(function ($) {
 </div>
 <a class="elementor-icon" href="https://www.instagram.com/direct/inbox/">
 <img src="https://socialteacup.co.uk/wp-content/uploads/2021/08/icon-mail2-60.png" alt="Reply" id="reply-icon" style="vertical-align: middle;line-height: 1.5em;margin-left: 10px;">
-<!-- <i aria-hidden="true" class="fas fa-mail-bulk" style="color: #c3504c;font-size: 0.6em;line-height: 1.5em;margin-left: 10px;"></i> -->
 </a>
 
 	
@@ -810,8 +807,7 @@ function openTabs(tabName) {
 	<div class="remember">
 	      <textarea class="ig_item<?php echo get_value('toremember','none','none',$weekly_array,'class','textarea');?> type="textarea" rows="5" cols="40" placeholder="Enter your notes here..." datetype="weekly" align="top" section_n="toremember" typea="none" typeb="none" style="width:100%;height:250px;"/><?php echo get_value('toremember','none','none',$weekly_array,'value','textarea'); ?></textarea>
 	</div>
-	
-	
+		
 </div>	
 	
 	
