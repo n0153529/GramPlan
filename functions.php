@@ -115,12 +115,12 @@ function output_last_week(){
 		$date = date('Y-m-d', strtotime("-1 week"));
 	};	
     $username = $current_user->user_login;
-	$sql = $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}ig_tracker_prd WHERE YEARWEEK(created_date) = YEARWEEK('".$date."') AND user = '".$username."' AND datetype = 'weekly'");
+	$sql = $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}ig_tracker_prd WHERE YEARWEEK(created_date) = YEARWEEK('".$date."') AND user <= '".$username."' AND datetype = 'weekly'");
 	$check_array = $wpdb->get_results( $sql , ARRAY_A );
 	
 	// Get the earliest "created_date", which we'll assume was created when the user was
 	// first registered as an alternative means to get the first possible date
-	// $sql = $wpdb->prepare( "SELECT min(created_date) as `created_date` FROM {$wpdb->prefix}ig_tracker_prd WHERE YEARWEEK(created_date) <= YEARWEEK('".$date."') AND user = '".$username."' AND datetype = 'weekly'");
+	// $sql = $wpdb->prepare( "SELECT min(created_date) as `created_date` FROM {$wpdb->prefix}ig_tracker_prd WHERE YEARWEEK(created_date,7) <= YEARWEEK('".$date."',7) AND user = '".$username."' AND datetype = 'weekly'");
 	// $first_plan_date = $wpdb->get_results( $sql , ARRAY_A );
 	
 	if(count($check_array)>0){ ?>
